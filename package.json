@@ -8,7 +8,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "start": "node index.js",
+    "build:ui": "rm -rf dist && cd ../../part1/phonebook && npm run build && cp -r dist ../../backend/part3",
+    "deploy:full": "npm run build:ui && git add && git commit -m uibuild && git push"
   },
   "dependencies": {
     "cors": "^2.8.6",
